@@ -1,0 +1,496 @@
+html, body{ /*resetting margins or padding that the browser may apply by default. Wanting to have navbar background color span the width and height of the viewport without a border */
+    margin: 0;
+    padding:0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  
+  
+  /* Styling the Navbar*/
+    .navbar{
+      display: flex; /*Making the navbar itself a flex container so I can horizontally align list items in navbar*/
+      justify-content: center; /*centering any children of navbar horizontally*/
+      align-items: center; /*centering any children of navbar vertically*/
+      height: 75px; /*Setting a fixed height of the navbar */
+      width: 100%; /* full width of the viewport */
+      font-size: 24px;
+      font-family:'Oswald';
+      font-weight:bold;
+      background-color: #1c1c1c;
+      white-space: nowrap;
+    }
+  
+    /* Creating a Horizontal Navbar*/
+    .navbar ul{
+      display: flex; /*listing items in ul horizontally - flex is best used for a single row or a single column*/
+      justify-content: center; /*Centers the list items vertically to the page */
+      list-style-type: none; /*Removes bullet points from list items */
+      margin:0; /*making sure there is no default margin added*/
+      padding: 0; /*making sure there is not default padding added */
+      height: 100%; /*using the the whole height of the navbar */
+    }
+  
+    /*Using to position children elements aka everything in li relative to each other*/
+    .navbar ul li {
+      position: relative; /*using this to position any children elements aka <a> elements in the .navbar */
+    }
+  
+    .navbar ul li:last-child {
+      margin-right: 0; /*making sure there is no margin on the last list item so that the list stays centered vertically*/
+    }
+  
+    /*Styling all the links in the .navbar to be the same*/
+    .navbar a{ 
+      color:#ffffff; /*Changes the color of the list items in the navbar */
+      text-decoration: none; /*Removes the line under the link items in the navbar */
+      display: block; /*To make the hover effect cover the full height of the navbar, the <a> tags need to be displayed as block elements so you can match their height to the height of the navbar */
+      height: 100%; /*Making the block element run the full height of the navbar */
+      line-height:75px; /*Matches set navbar height above*/
+      padding: 0 40px;/* 40px padding on the left and right sides of the text , making an 80px gap between the text of the adjacent links */
+      position: relative; /*this creates a reference point for the nested content aka the pseduo elements- which is used to create the hover background effect*/
+      overflow: hidden; /*Ensures the children elements aka list items do not extend outside the link*/
+    }
+  
+    .navbar a::before { /* ::before is used to create decorative icons, is this case, the seamless exchange between hovers*/
+      content: ''; /* This property is used with ::before elements to perform the seamless spacing exchange between the hovers - its used here to create a shape*/
+      position: absolute;
+      top: 0; /*This is ensuring that the hover background will extend from the very top of the parent, aka the navbar list item*/
+      bottom:0; /*This aligns the top of the a item (Home for example) with the top of the parent or list item. Ensuring the hover background will extend to the very top of each link*/
+      left:0px; /*This aligns the bottom of the a item (Home for example) with the bottom of the parent or list item. Ensuring the hover background will extend to the very bottom of each link*/
+      right:0px; /* This makes sure that the hover starts from the very right edge of the anchor tag including the padding. this is to ensure that the hover features butt up next to each other, not overlap*/
+      background-color: transparent; /*Ensuring that the text can be visible through the background color of the hover when hovered over*/
+      z-index: -1; /*Added to make sure that the hover background color is behind the text */
+      transition: background-color 0.3s; /*Making the hover effect have a smooth transition */
+    }
+  
+    .navbar li a:hover {
+      background-color: #555; /*Hover features background color*/
+    }
+  
+  /*End of Navbar Styling*/
+  
+  
+  
+  
+  /*Styling AUSTIN CROYLE */
+    .container {
+      margin: 0 auto;
+      padding:0;
+    }
+  
+    .header-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width:100%;
+      margin-top:30px;
+      padding-top:0;
+      height:auto;
+      /*background-color: purple;*/
+    } 
+  
+    .header {
+      font-size: 118px;
+      font-family: 'PP Monument Extended';
+      line-height: 1;
+      margin-top:0;
+      padding:0;
+      font-weight: bold;
+      letter-spacing:-0.90%;
+      color: #1c1c1c;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  /*End of Styling AUSTIN CROYLE */
+  
+  
+  
+  
+  /*Styling About Section */
+    .third-row{
+      display: flex;
+      align-items: flex-end; /*aligning the bottom of image with the bottom of the paragraph */
+      justify-content: center; /* Centers the children horizontally in the container */
+      margin-top: 125px;
+    }
+  
+    /*.image-about{*/
+        /*width: 100%;*/
+        /*box-sizing: border-box;*/
+    
+
+    .image-about img{
+      border-top-right-radius: 80px;
+      border-bottom-left-radius: 80px;
+      margin-right: 36.5px;
+      margin-top:0;
+      max-width: 100%;
+      height: auto;
+
+    }
+  
+    .paragraph-about{
+      margin-top: 20px;
+      width: 527px; /* Set the width of the paragraph */
+      max-height: 341px; /* Set the maximum height of the paragraph */
+      /*max-width: 600px;  Set the maximum width of the paragraph */
+      overflow: auto; /* Add scrollbar if content overflows */
+      text-align: justify;
+      /*border:5px solid black;*/
+    }
+  
+    .title-about, .paragraph-about {
+      margin-left: 36.5px;
+    }
+  
+    .title-about {
+      font-family:'Oswald', sans-serif;
+      font-size:94px;
+      line-height:1; /* Setting the line height of the element equal to the size of the font-size */
+      font-weight:bold;
+      letter-spacing:1%;
+      color: #1c1c1c;
+    }
+  
+    .paragraph-about {
+      font-family:'Oswald', sans-serif;
+      font-size: 21px;
+      font-weight:medium;
+      letter-spacing:1%;
+    }
+  /*End of Styling About Section */
+  
+  
+  
+  
+  /* Styling Skills & Softwares Section */
+    .fourth-row {
+      margin-top: 150px;
+      display: flex;
+      align-items: center;
+      flex-direction:column;
+    }
+  
+    .title-skills, .paragraph-skills{
+      margin-left:0;
+      padding-left: 0;
+    }
+  
+    .responsive-break-one{
+      display: none;
+    }
+
+    .title-skills {
+      font-family:'Oswald', sans-serif;
+      font-size:94px;
+      line-height:1; /* Setting the line height of the element equal to the size of the font-size */
+      font-weight:bold;
+      letter-spacing:1%;
+      color: #1c1c1c;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      /*border:5px solid black;*/
+    }
+  
+    .paragraph-skills {
+      margin-top: 20px;
+      padding-top: 0;
+      height:155px;
+      width:864px;
+      overflow: auto; /* Add scrollbar if content overflows */
+      font-family:'Oswald', sans-serif;
+      font-size: 21px;
+      font-weight:medium;
+      letter-spacing:1%;
+      text-align: justify;
+      margin-bottom: 80px;
+      /*border:5px solid black;*/
+    }
+
+    .image-skills{
+      display: flex;
+      align-items: center;
+      justify-content:center;
+    }
+
+  /*End of Styling Skills & Softwares Section */
+  
+
+  
+  /*Styling Case Studies Section */
+    .case-studies{
+      margin-left:60px;
+    }
+  
+    .title-case-studies {
+      font-family:'Oswald', sans-serif;
+      font-size:94px;
+      line-height:1; /* Setting the line height of the element equal to the size of the font-size */
+      font-weight:bold;
+      letter-spacing:1%;
+      color: #1c1c1c;
+      margin-top:150px;
+      margin-bottom: 100px;
+      padding-bottom:0;
+    }
+  
+    .responsive-break-two , .responsive-break-three {
+      display: none;
+    }
+
+    .section-title-one , .section-title-two {
+      font-family:'Oswald', sans-serif;
+      font-size:54px;
+      font-weight:bold;
+      letter-spacing: 1%;
+      color: #1c1c1c;
+      margin-top:0;
+      padding-top:0;
+      margin-bottom: 0px;
+      padding-bottom:0;
+    }
+  
+    .first-case-study img , .second-case-study img {
+      margin-top: 40px;
+      padding-top:0;
+      margin-bottom: 100px;
+      padding-bottom:0;
+    }
+  /*End of Styling Case Studies Section */
+  
+  
+  
+  
+  /* Styling the Footer Navbar*/
+    .footer-navbar{
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      height: 75px; 
+      width: 100%; 
+      font-size: 24px;
+      font-family:'Oswald';
+      font-weight:bold;
+      background-color: #1c1c1c;
+      white-space: nowrap;
+    }
+  
+    
+    .footer-navbar ul{ /* Creating a Horizontal Footer Navbar*/
+      display: flex; 
+      justify-content: center; 
+      list-style-type: none; 
+      margin:0; 
+      padding: 0; 
+      height: 100%; 
+    }
+  
+    
+    .footer-navbar ul li { /*Using to position children elements aka everything in li relative to each other*/
+      position: relative; /*using this to position any children elements aka <a> elements in the .footer-navbar */
+    }
+  
+    .footer-navbar ul li:last-child {
+      margin-right: 0; /*making sure there is no margin on the last list item so that the list stays centered vertically*/
+    }
+    
+    .footer-navbar a{ 
+      color:#ffffff; 
+      text-decoration: none; 
+      display: block; 
+      line-height:75px; 
+      padding: 0 40px;
+      position: relative; 
+      overflow: hidden; 
+    }
+  
+    .footer-navbar a::before { 
+      content: ''; 
+      position: absolute;
+      top: 0; 
+      bottom:0; 
+      left:0px; 
+      right:0px; 
+      background-color: transparent; 
+      z-index: -1; 
+      transition: background-color 0.3s; 
+    }
+  
+    .footer-navbar li a:hover {
+      background-color: #555; 
+    }
+
+   
+  /*End of Footer Navbar Styling*/
+  
+  
+  
+  
+  /* Responsive Design */
+  
+    @media (max-width:738px) { /*Responsive Design for the navbar when shrinking*/
+      .navbar ul li a {
+        padding: 0 24px;
+        font-size: 18px;
+      }
+    } 
+    
+    @media (max-width: 738px) {
+      .header {
+          font-size: 35px;
+      }
+
+      .header-container{
+          margin-top: 15px;
+      }
+    }
+      
+
+
+    @media (max-width: 738px) {
+      .third-row {
+        flex-direction: column; /* Stacks the flex children vertically */
+        align-items: center; /* Centers the items vertically in the container */
+        margin-top: 30px;
+      }
+      .title-about {
+        font-size: 54px;
+        margin-left: 60px;
+        padding:0;
+        margin-top: 50px;
+      }
+
+      .image-about {
+        padding: 0 20px;
+        padding-bottom:0;
+        margin-bottom:0;
+      }
+
+      .image-about img { 
+        width: 390px;
+        height: auto;
+      }
+
+      .paragraph-about {
+        font-size: 16px;
+        width: auto;
+        height:auto;
+        margin: auto;
+        margin-top: 20px;
+        padding: 0 60px;
+      }
+    }
+     
+    
+
+   @media (max-width: 738px) {
+
+      .fourth-row {
+      margin-top: 100px;
+      }
+
+      .responsive-break-one {
+        display: block;
+      }
+
+      .title-skills {
+      font-size: 54px;
+      padding:0 60px;
+      }
+
+      .paragraph-skills {
+      font-size: 16px;
+      width: auto;
+      height:auto;
+      margin-bottom:0;
+      padding-bottom:0;
+      margin-top: 20px;
+      padding: 0 60px;
+      margin-bottom: 50px;
+      }
+
+      .image-skills img {
+      width: 356px;
+      height: 177px;
+      padding-top: 0;
+      }
+    }
+   
+
+
+    @media(max-width:738px){
+      
+      .title-case-studies {
+        font-size: 54px;
+        margin-top:100px;
+        margin-bottom: 50px;
+        margin-left: 20px;
+        padding-left: 0;
+      }
+
+      .responsive-break-two , .responsive-break-three {
+        display: block;
+      }
+
+      .section-title-one , .section-title-two {
+        width:100%;
+        font-size: 34px;
+        white-space: normal;
+        line-height:1.2;
+        margin-left: 20px;
+        padding-left: 0;
+      } 
+
+      .case-studies {
+        margin-left: 0;
+      }
+      .first-case-study img {
+        margin-left: 0;
+      }
+
+      .second-case-study img {
+        margin-left: 20px;
+        padding-left: 0;
+      }
+
+      .first-case-study img , .second-case-study img {
+        margin-top: 20px;
+        margin-bottom: 50px;
+        padding-left: 0;
+      }
+    }
+    
+
+    /* Media Query for Footer Navbar */
+    @media (max-width: 738px){
+      footer, .footer-navbar {
+        background-color: #1c1c1c;
+        height: auto;
+      }
+      
+      .footer-navbar ul{
+        flex-direction:column; /*Stack list items vertically when window is shrunk */
+        align-items: center; /* Aligining items in the center vertically */
+      }
+
+      .footer-navbar ul li{
+        margin-bottom: 0px;
+      }
+
+      .footer-navbar ul li:last-child {
+        margin-bottom: 0;
+      }
+
+      .footer-navbar a {
+        font-size: 18px;
+        padding: 0px 24px;
+      }
+    }
+      
+
+
+
+
+  
